@@ -87,13 +87,3 @@ The evaluation summary is written to:
 experiments/<experiment.name>/best_ckpts_summary.csv
 ```
 
-## Configuration
-
-The config files define:
-
-- dataset path and window settings
-- model dimensions
-- training hyperparameters
-- evaluation score smoothing and post-processing
-
-Update `data.data_path` and `experiment.name` as needed before running a new experiment.
