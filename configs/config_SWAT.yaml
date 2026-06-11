@@ -1,0 +1,41 @@
+data:
+  dataset_name: swat
+  data_path: ./data/swat/
+  window_size: 24
+  step_size: 2
+experiment:
+  name: swat
+training:
+  batch_size: 64
+  shuffle: true
+  learning_rate: 0.001
+  num_epochs: 10
+  device: cuda
+  weight_decay: 1e-5
+dbpm:
+  beta_np: 1.0
+  beta_fp: 1.0
+  warmup_epochs: 5
+anomaly:
+  num_anomalies_per_sample: 8
+  noise_sigma: 0.05
+contrastive:
+  temperature: 0.1
+  recon_margin: 0.5
+evaluation:
+  score_level: point
+model:
+  encoder:
+    input_dim: 51
+    proj_dim: 55
+    hidden_dim: 30
+    nhead: 5
+    num_layers: 4
+    dim_feedforward: 128
+    dropout: 0.1
+  decoder:
+    hidden_dim: 30
+    output_dim: 51
+  discriminator:
+    hidden_dim: 51
+    output_dim: 1
